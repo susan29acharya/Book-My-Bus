@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+.spanbody{
+    height: 90vh;
+    width: 99%;
+    margin-left: 0.5%;
+    border-radius: 10px;
+}
+
+.nav{
+    width: 99%;
+    height: 8vh;
+    margin-left: 0.5%;
+    border-radius: 5px;
+    border-bottom: 2px solid white;
+    background-color: #191919;
+    position:fixed;
+    top: 0;
+
+
+}
+.nav-content{
+    display: flex;
+    padding: 12px 5px;
+}
+.follow{
+    display: flex;
+    margin-right: 25%;
+    margin-left: 1%;
+}
+.follow p{
+   margin-right: 7%;
+}
+.follow i{
+    margin-right: 15%;
+    font-size: 1.2em;
+}
+.nav-content i{
+    color: #f9004d;
+    padding-right: 2%;
+    padding-top: 5px;
+}
+.nav-content p{
+    padding-right: 5%;
+    color: white;
+}
+
+.login-signup{
+    display: flex;
+    margin-left: 27%;
+}
+.login-signup i{
+    margin-left: 30%;
+}
+.login-signup a{
+    text-decoration: none;
+}
+.login-signup p{
+    margin-left:4%;
+}
+
+.nav2{
+    height: 8.5vh;
+    width: 99%;
+    margin-left: 1%;
+    margin-top: 5%;
+    border-radius: 5px;
+    background-color: #ECF0F1;
+    display: flex;
+}
+.logo-sec{
+    display: flex;
+    height: 10vh;
+    width: 30%;
+}
+.logo-sec i{
+    font-size: 2.2em;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-left: 2%;
+    color: #f9004d;
+}
+.logo-sec h3{
+    margin-top: 2%;
+    color: #f9004d;
+    font-size: 33px;
+}
+
+.nav-list{
+    display: flex;
+    height: 10vh;
+    width: 70%;
+
+}
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    padding-top: 1.5%;
+    height: 10vh;
+    width: 70%;
+    margin-left: 30%;
+    list-style: none;
+}
+.nav-list li{
+    text-decoration: none;
+    margin-left: 4%;
+}
+ul li a {
+    color: #191919;
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+ul li a::after {
+    content: "";
+    position: absolute;
+    background-color: #f9004d;
+    border-radius: 4px;
+    height: 4px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    transition: 0.6s ease;
+}
+
+ul li a:hover::after {
+    width: 100%;
+}
+
+
+
+.span-body{
+    height:73vh ;
+    width: 94%;
+    margin-top: 1.5%;
+    margin-left: 3%;
+    border-radius: 10px;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),url('All image/spanimage.png');
+}
+
+.left-span-body{
+    height: 65vh;
+    width: 64%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+.left-span-body span{
+    color: yellow;
+}
+.left-span-body h1{
+    color: white;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 15%;
+    text-transform: uppercase;
+    line-height: 130%;
+}
+.right-span-body{
+    height: 70vh;
+    width: 30%;
+    border: 2px solid #191919;
+    margin-left: 4%;
+    margin-right: 1%;
+    margin-top: 0.7%;
+    border-radius: 15px;
+    background-color: #F4F6F7;
+}
+.right-span-body h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #f9004d;
+    border-bottom: 2px solid #191919;
+    border-radius: 5px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding-top: 4%;
+    padding-bottom: 3%;
+}
+.search-form{
+    margin-left: 7%;
+    margin-top: 6%;
+}
+.search-form i{
+    color: #f9004d;
+    font-size: 1.2em;
+}
+.search-form label{
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: black;
+    padding-left: 2%;
+    
+}
+.search-form input{
+    height: 7vh;
+    width: 82%;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    background-color: #ECF0F1;
+    color: black;
+    border: 1px solid black;
+    padding: 0px 15px;
+    font-size: 18px;
+}
+.search-button{
+   margin-left: 20%;
+   margin-top: 5%;
+}
+.search-button button{
+    height: 6vh;
+    width: 60%;
+    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    background-color: #f9004d;
+    transition: 0.3s ease;
+}
+.search-button a{
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    
+}
+.search-button button:hover{
+    transform: scale(1.1,1.1);
+}
+
+
+
+
+
+/* --------------------------------------------------------------------------- */
+
+
+.book-my-bus-info{
+    height: 100vh;
+    width: 94%;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+.book-my-bus-info h1{
+    text-align: center;
+    letter-spacing: 1px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 45px;
+}
+.book-my-bus-info span{
+    color: #f9004d;
+}
+.book-my-bus-info p{
+    padding: 0% 2%;
+    text-align: justify;
+    font-size: 17px;
+}
+.book-my-bus-info h2{
+    text-align: center;
+    letter-spacing: 2px;
+    margin-top: 2%;
+}
+.buses{
+    height: 58vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bus-container{
+    height: 52.5vh;
+    width: 22%;
+    border: 2px solid black;
+    margin-top: 1%;
+    margin-left: 1.5%;
+    border-radius: 7px;
+    box-shadow: 1px 1px 7px #191919;
+    background-color: white;
+    transition: 0.5s ease;
+}
+.bus-container:hover{
+    transform: scale(1.1,1.1);
+}
+.bus-img{
+    height: 30vh;
+    width: 100%;   
+}
+.bus-img img{
+    height: 30vh;
+    width: 100%;
+    border-radius: 6px;
+}
+.bus-info{
+    height: 21.2vh;
+    width: 100%;
+    margin-top: 1%;
+    border-radius: 7px;
+    background-color: #F2F3F4;
+}
+.bus-info h5{
+    text-align: center;
+    font-size: 23px;
+    padding-top: 1%;
+    color: #f9004d;
+    letter-spacing: 2px;
+}
+.bus-info p{
+    font-size: 17px;
+    color: black;
+    letter-spacing: 2px;
+}
+.facilities p{
+    font-size: 13px;
+    padding-right: 5%;
+    padding-top: 2%;
+    color: #f9004d;
+    letter-spacing: 1px;
+}
+.facilities{
+    display: flex;
+    margin-left: 3%;
+    margin-top: -4%;
+}
+.facilities i{
+    margin-right: 1%;
+    padding-top: 3%;
+    color: black;
+    font-size:0.8em;
+}
+
