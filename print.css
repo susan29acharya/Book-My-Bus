@@ -6,7 +6,7 @@
     
 }
 .print_ticket{
-    height: 100vh;
+    height:90vh;
     width: 100%;
     background-color: whitesmoke;
     border-radius: 5px;
@@ -19,6 +19,9 @@
     border-radius: 5px;
     border-bottom: 2px solid white;
     background-color: #191919;
+    position:fixed;
+    top: 0;
+
 
 }
 .nav-content{
@@ -27,7 +30,7 @@
 }
 .follow{
     display: flex;
-    margin-right: 25%;
+    margin-right: 14%;
     margin-left: 1%;
 }
 .follow p{
@@ -39,17 +42,18 @@
 }
 .nav-content i{
     color: #f9004d;
-    padding-right: 2%;
-    padding-top: 5px;
+    padding-right: 1%;
+    padding-top: 4px;
 }
 .nav-content p{
     padding-right: 5%;
     color: white;
+    padding-top: 4px;
 }
 
 .login-signup{
     display: flex;
-    margin-left: 27%;
+    margin-left: 5%;
 }
 .login-signup i{
     margin-left: 30%;
@@ -65,7 +69,7 @@
     height: 8.5vh;
     width: 99%;
     margin-left: 1%;
-    margin-top: 1%;
+    margin-top: 5%;
     border-radius: 5px;
     background-color: #ECF0F1;
     display: flex;
@@ -132,3 +136,67 @@ ul li a::after {
 ul li a:hover::after {
     width: 100%;
 }
+
+.cancle-print-section{
+    height: 70vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+.cancle-print-section a{
+    text-decoration: none;
+    color: black;
+    margin-right: 1%;
+    margin-left: 1%;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+.print-form{
+    height: 60vh;
+    width: 50%;
+    margin-top: 1%;
+    margin-left:35%;
+}
+.print-form form h1{
+    letter-spacing: 1px;
+    color: #f9004d;
+    padding-bottom: 7%;
+}
+.print-form form label{
+    padding-left: 1%;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.print-form form input{
+    height: 6.5vh;
+    width: 60%;
+    border-radius: 4px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    border:1.5px solid #191919;
+    font-size: 16px;
+    padding: 6px;
+}
+.print-form form button{
+    margin-left: 1.5%;
+    margin-top: 3%;
+    height: 6vh;
+    width: 20%;
+    border-radius: 9px;
+    border: 2px solid black;
+    background-color: #f9004d;
+    transition: 0.4s ease;
+
+}
+.print-form form button a{
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-size: 17px;
+    color: white;
+}
+.print-form form button:hover{
+    transform: scale(1.1,1.1);
+}
+
