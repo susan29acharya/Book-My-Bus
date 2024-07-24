@@ -140,9 +140,9 @@ ul li a:hover::after {
 
 .span-body{
     height:73vh ;
-    width: 94%;
+    width: 90%;
     margin-top: 1.5%;
-    margin-left: 3%;
+    margin-left: 5%;
     border-radius: 10px;
     display: flex;
     background-position: center;
