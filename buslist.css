@@ -179,8 +179,8 @@ ul li a:hover::after {
     width: 100%;
     box-shadow: 2px 2px 5px #191919;
     border-radius: 8px;
-    margin-bottom: 5%;
     display: flex;
+    margin-bottom: 3%;
 }
 .details{
     height: 30vh;
@@ -258,3 +258,105 @@ details p{
     border: none;
     border-radius: 10px;
 }
+
+.seats{
+    height: 80vh;
+    width: 100%;
+    margin-bottom: 2%;
+    display: none;
+    box-shadow: 2px 2px 5px #191919;
+
+}
+.list-price-flex{
+    display: flex;
+}
+.seat-list{
+    height: 66vh;
+    width: 25.2%;
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.driver{
+    height: 12vh;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.driver img{
+    height: 7vh;
+    width: 15%;
+    margin-top: 8%;
+    margin-left: 80%;
+}
+.column1{
+    margin-top: 20px;
+    margin-left: 5%;
+}
+.column2{
+    margin-top: 20px;
+    margin-left: 70%;
+}
+.column3{
+    margin-top: 20px;
+    margin-left: 280%;
+}
+.column4{
+    margin-top: 20px;
+    margin-left: 70%;
+}
+.last-row{
+    display: flex;
+    margin-right: 5%;
+}
+
+.first-flex{
+    display: flex;
+}
+.second-flex{
+    display: flex;
+}
+.whole-seat-flex{
+    display: flex;
+
+}
+.seat{
+    height: 5vh;
+    width: 200%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    margin-left: 5px;
+    margin-bottom: 3px;
+}
+.price{
+    height: 25vh;
+    width: 40%;
+    margin-left: 15%;
+    margin-top: 19%;
+}
+.price h5{
+    font-size: 19px;
+    letter-spacing: 1px;
+    padding-bottom: 3%;
+    color: grey;
+}
+.price button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #f9004d;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    height: 6vh;
+    border-radius: 10px;
+    width: 45%;
+    margin-top: 9%;
+
+}
+
