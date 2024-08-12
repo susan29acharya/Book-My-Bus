@@ -8,7 +8,6 @@
 .print_ticket{
     height:90vh;
     width: 100%;
-    background-color: whitesmoke;
     border-radius: 5px;
 }
 
@@ -67,11 +66,10 @@
 
 .nav2{
     height: 8.5vh;
-    width: 99%;
-    margin-left: 1%;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 5%;
     border-radius: 5px;
-    background-color: #ECF0F1;
     display: flex;
 }
 .logo-sec{
@@ -80,15 +78,16 @@
     width: 30%;
 }
 .logo-sec i{
-    font-size: 2.2em;
+    font-size: 2em;
     margin-right: 2%;
     margin-top: 2%;
     margin-left: 2%;
     color: #f9004d;
 }
 .logo-sec h3{
-    margin-top: 2%;
+    margin-top: 1%;
     color: black;
+    font-weight: normal;
     font-size: 30px;
     font-family: "Playwrite AR", cursive;
 }
@@ -105,13 +104,13 @@ ul {
     /* align-items: center; */
     padding-top: 1.5%;
     height: 10vh;
-    width: 70%;
-    margin-left: 30%;
+    width: 90%;
+    margin-left: 20%;
     list-style: none;
 }
 .nav-list li{
     text-decoration: none;
-    margin-left: 4%;
+    margin-left: 6%;
 }
 ul li a {
     color: #191919;
@@ -128,7 +127,7 @@ ul li a::after {
     position: absolute;
     background-color: #f9004d;
     border-radius: 4px;
-    height: 4px;
+    height: 3px;
     width: 0;
     left: 0;
     bottom: -8px;
@@ -138,67 +137,147 @@ ul li a::after {
 ul li a:hover::after {
     width: 100%;
 }
-
 .cancle-print-section{
     height: 70vh;
     width: 90%;
-    margin-left: 5%;
-    margin-top: 3%;
 }
 
-.cancle-print-section a{
-    text-decoration: none;
-    color: black;
-    margin-right: 1%;
-    margin-left: 1%;
-    font-size: 17px;
-    letter-spacing: 1px;
+.ticket-flex{
+    display: flex;
+    margin-top: 6%;
+    margin-left: 5%;
 }
 .print-form{
-    height: 60vh;
-    width: 50%;
-    margin-top: 1%;
-    margin-left:35%;
+    height:50vh;
+    width: 30%;
+    background-color: #f9004f;
+    position: absolute;
+    z-index: 2;
+    margin-top: 2.5%;
+    padding: 2%;
+    border-radius: 20px;
+    margin-left: 10%;
+    box-shadow: 2px 2px 5px #191919;
 }
-.print-form form h1{
+.print-form h1{
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
     letter-spacing: 1px;
-    color: #f9004d;
-    padding-bottom: 7%;
+    text-align: center;
+    color: white;
+    padding-top: 2%;
+    padding-bottom: 10%;
 }
-.print-form form label{
-    padding-left: 1%;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
+
 .print-form form input{
-    height: 6.5vh;
-    width: 60%;
+    height: 7.5vh;
+    width: 76%;
+    margin-bottom: 7%;
+    padding: 7px;
+    margin-left: 10%;
     border-radius: 4px;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    margin-left: 1%;
-    border:1.5px solid #191919;
-    font-size: 16px;
-    padding: 6px;
+    border: none;
+
+}
+.print-form form input::placeholder{
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
 }
 .print-form form button{
-    margin-left: 1.5%;
+    height: 5.5vh;
+    width: 25%;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 7px;
+    margin-left: 29%;
     margin-top: 3%;
-    height: 6vh;
-    width: 20%;
-    border-radius: 9px;
-    border: 2px solid black;
-    background-color: #f9004d;
-    transition: 0.4s ease;
-
+    transition: 0.5s ease;
 }
 .print-form form button a{
-    letter-spacing: 2px;
-    text-transform: capitalize;
+    text-decoration: none;
     font-size: 17px;
-    color: white;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: black;
+    transition: 0.5s ease;
 }
 .print-form form button:hover{
-    transform: scale(1.1,1.1);
+    background-color: #191919;
+    cursor: pointer;
+    color: white;
+}
+.print-form form button a:hover{
+    color: white;
+}
+.cancle-form{
+    height:60vh;
+    width: 55%;
+    box-shadow: 2px 2px 5px #191919;
+    border-radius: 20px;
+    margin-left: 25%;
+    position: absolute;
+    z-index: 1;
+}
+.cancle-form h1{
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+    margin-left: 40%;
+    color: black;
+    padding-top: 4%;
+}
+.cancle-form p{
+    margin-left: 35%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    font-family: "Poppins", sans-serif;
+}
+.cancle-form span{
+    color:#f9004d;
 }
 
+.cancle-form form input{
+    height: 7.5vh;
+    width: 40%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    padding: 7px;
+    margin-left: 35%;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    border: none;
+
+}
+.cancle-form form input::placeholder{
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    color: grey;
+}
+.cancle-form form button{
+    height: 6vh;
+    width: 15%;
+    border: none;
+    background-color: #f9004d;
+    border-radius: 7px;
+    margin-left: 45%;
+    margin-top: 3%;
+    transition: 0.5s ease;
+}
+.cancle-form form button a{
+    text-decoration: none;
+    font-size: 17px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: white;
+    transition: 0.5s ease;
+}
+.cancle-form form button:hover{
+    background-color: #191919;
+    cursor: pointer;
+    color: white;
+}
+.cancle-form form button a:hover{
+    color: white;
+}
