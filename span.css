@@ -431,7 +431,7 @@ ul li a:hover::after {
     padding: 2px;
 }
 .img img{
-    height: 19vh;
+    height: 20vh;
     width: 100%;
     border-radius: 50%;
 }
