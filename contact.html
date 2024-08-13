@@ -75,26 +75,26 @@
                 <form action="">
                     <div class="form-left-section">
                         <label>Name</label><br>
-                        <input type="text"><br>
+                        <input type="text" id="name"><br>
 
                         <label>Mobile</label><br>
-                        <input type="number"><br>
+                        <input type="number" id="mobile"><br>
 
                         <label>Subject</label><br>
-                        <input type="text"><br>
+                        <input type="text" id="subject"><br>
 
-                        <button><a href="#">Submit</a></button>
+                        <button onclick="submitform(event)"><a href="#">Submit</a></button>
                     </div>
 
                     <div class="form-right-section">
                         <label>Email</label><br>
-                        <input type="email"><br>
+                        <input type="email" id="email"><br>
 
                         <label>Address</label><br>
-                        <input type="text"><br>
+                        <input type="text" id="Address"><br>
 
                         <label>Message</label><br>
-                        <textarea></textarea>
+                        <textarea id="message"></textarea>
 
                     </div>
                 </form>
@@ -113,4 +113,29 @@
 
     </div>
 </body>
+<script>
+    let name =document.getElementById('name');
+    let mobile = document.getElementById('mobile');
+    let subject =document.getElementById('subject');
+    let email =document.getElementById('email');
+    let Address = document.getElementById('Address');
+    let message = document.getElementById('message');
+
+    function submitform (event){
+        event.preventDefault();
+        if(name.value === "" || mobile.value === "" || subject.value === "" || email.value === "" || Address.value === "" || message.value === "")
+    {
+        alert("Fill the form");
+    }
+    else{
+        alert("Message sent!! we will contact you soon");
+        name.value ="";
+        mobile.value = "";
+        subject.value = "";
+        email.value = "";
+        Address.value = "";
+        message.value = "";
+    }
+    }
+</script>
 </html>

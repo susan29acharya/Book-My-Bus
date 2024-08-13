@@ -292,23 +292,23 @@ details p{
 }
 .column1{
     margin-top: 20px;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 .column2{
     margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 25%;
 }
 .column3{
     margin-top: 20px;
-    margin-left: 280%;
+    margin-left: 120%;
 }
 .column4{
     margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 25%;
 }
 .last-row{
     display: flex;
-    margin-right: 5%;
+    margin-right: 3%;
 }
 
 .first-flex{
@@ -323,7 +323,7 @@ details p{
 }
 .seat{
     height: 5vh;
-    width: 200%;
+    width: 120%;
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -332,10 +332,13 @@ details p{
     margin-left: 5px;
     margin-bottom: 3px;
 }
+.seat:hover{
+    cursor: pointer;
+}
 .price{
     height: 25vh;
     width: 40%;
-    margin-left: 15%;
+    margin-left: 10%;
     margin-top: 19%;
 }
 .price h5{
@@ -358,5 +361,13 @@ details p{
     width: 45%;
     margin-top: 9%;
 
+}
+#selected-seats{
+    font-size: 15px;
+    color: black;
+}
+#total-amount{
+    font-size: 15px;
+    color: black;
 }
 
