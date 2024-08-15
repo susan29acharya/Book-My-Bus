@@ -138,17 +138,39 @@ ul li a::after {
 ul li a:hover::after {
     width: 100%;
 }
-
-.kd-kt {
-    height: 5vh;
-    width: 27%;
+.flexing{
+    display: flex;
+    height: 7vh;
+    width: 90%;
     margin-left: 5%;
     margin-top: 2%;
-    border-bottom: 1px solid black;
 }
+.kd-kt{
+    margin-top: 0.5%;
+}
+
+.kt-flex{
+    display: flex;
+    margin-left: 7%;
+}
+.kt-flex input{
+    height: 7vh;
+    width: 30%;
+    margin-right: 5%;
+    border: 1px solid #f9004d;
+    padding-left: 15px;
+    border-radius: 7px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: black;
+
+    background-color: whitesmoke;
+    font-size: 19px;
+}
+
 .buslist-flex{
     display: flex;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 .desired-bus{
     height: 50vh;
