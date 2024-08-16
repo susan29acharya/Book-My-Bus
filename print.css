@@ -143,9 +143,22 @@ ul li a:hover::after {
 }
 
 .ticket-flex{
+    height: 70vh;
+    width: 90%;
     display: flex;
-    margin-top: 6%;
-    margin-left: 5%;
+    margin-top: 4%;
+    margin-left: 6%;
+
+}
+@keyframes ticketflex {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
 }
 .print-form{
     height:50vh;
@@ -158,6 +171,9 @@ ul li a:hover::after {
     border-radius: 20px;
     margin-left: 10%;
     box-shadow: 2px 2px 5px #191919;
+    animation: ticketflex linear;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
 }
 .print-form h1{
     font-size: 25px;
@@ -218,6 +234,9 @@ ul li a:hover::after {
     margin-left: 25%;
     position: absolute;
     z-index: 1;
+    animation: ticketflex linear;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
 }
 .cancle-form h1{
     font-size: 25px;
