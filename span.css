@@ -308,6 +308,16 @@ ul li a:hover::after {
     justify-content: space-evenly;
     align-items: center;
 }
+@keyframes bus {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
 .bus-container{
     height: 52vh;
     width: 23%;
@@ -317,11 +327,12 @@ ul li a:hover::after {
     border-radius: 7px;
     box-shadow: 1px 1px 5px #191919;
     background-color: white;
-    transition: 0.5s ease;
+    animation: bus linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+
 }
-.bus-container:hover{
-    transform: scale(1.1,1.1);
-}
+
 .bus-img{
     height: 30vh;
     width: 100%;   
@@ -396,7 +407,19 @@ ul li a:hover::after {
     justify-content: space-evenly;
     align-items: center;
     margin-top: 2%;
+
 }
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+       transform: translateX(0px);
+    }
+}
+
 .feedback-box1{
     height: 55vh;
     width: 45%;
@@ -404,6 +427,20 @@ ul li a:hover::after {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+
+}
+@keyframes appear2 {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+       transform: translateX(0px);
+    }
 }
 .feedback-box2{
     height: 55vh;
@@ -412,6 +449,9 @@ ul li a:hover::after {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    animation: appear2 linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
 }
 .box1{
     height: 22vh;
@@ -422,6 +462,7 @@ ul li a:hover::after {
     display: flex;
     justify-content: center;
     align-items: center;
+
     
 }
 .img{
