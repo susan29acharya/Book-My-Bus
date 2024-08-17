@@ -1,3 +1,21 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // If not logged in, redirect to login page
+    header("Location: http://localhost/Book-My-Bus/login.php");
+    exit;
+}
+
+// Get the username from the session if logged in
+$username = htmlspecialchars($_SESSION['username']);
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
+?>
+
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -37,15 +55,16 @@
                     <i
                         class="fa-regular fa-envelope"></i><p>bookmybus@gmail.com</p>
 
+                        <p id="user-message">Hello, <?php echo $username; ?>!</p>
+        
+
                     <!--login signup section ---------------------------------------->
                     <div class="login-signup">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        <a href="login.html"><p>Login</p></a>
 
-                        <i class="fa-solid fa-user-plus"></i>
-                        <a href="signup.html"><p>Signup</p></a>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="logout.php"><p>Logout</p></a>
 
-                    </div>
+        </div>
                 </div>
 
             </div>
@@ -62,11 +81,11 @@
                 <!-- nav list  section ---------------------------------------->
                 <div class="nav-list">
                     <ul>
-                        <li><a href="span.html">home</a></li>
-                        <li><a href="print.html" >manage
+                        <li><a href="span.php">home</a></li>
+                        <li><a href="print.php" >manage
                                 ticket</a></li>
                         <li><a href="#">home</a></li>
-                        <li><a href="contact.html">contact us</a></li>
+                        <li><a href="contact.php">contact us</a></li>
                     </ul>
 
                 </div>
@@ -80,6 +99,8 @@
 
                 <!--left span body section ---------------------------------------->
                 <div class="left-span-body">
+                
+
                     <h1><span>"</span>Difficult roads often lead to beautiful
                         destinations<span>"</span></h1>
                 </div>
@@ -90,24 +111,20 @@
 
                     <!--search form section ---------------------------------------->
                     <div class="search-form">
-                        <form>
-                            <i
-                                class="fa-solid fa-bus-simple"></i><label>from</label><br>
-                            <input type="text" value="KAKARVITTA" disabled><br>
+                    <form>
+        <i class="fa-solid fa-bus-simple"></i><label>from</label><br>
+        <input type="text" value="KAKARVITTA" disabled><br>
 
-                            <i
-                                class="fa-solid fa-location-dot"></i><label>to</label><br>
-                            <input type="text" value="KATHMANDU" disabled><br>
+        <i class="fa-solid fa-location-dot"></i><label>to</label><br>
+        <input type="text" value="KATHMANDU" disabled><br>
 
-                            <i
-                                class="fa-regular fa-calendar-days"></i><label>date</label><br>
-                            <input type="date"><br>
+        <i class="fa-regular fa-calendar-days"></i><label>date</label><br>
+        <input type="date" id="date-input"><br>
 
-                            <div class="search-button">
-                                <button><a href="buslist.html">search</a></button>
-                            </div>
-
-                        </form>
+        <div class="search-button">
+            <button type="button" onclick="searchBus()">Search</button>
+        </div>
+    </form>
                     </div>
 
                 </div>
@@ -329,9 +346,37 @@
 
         </div>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+
+<script>
+function checkLogin(event) {
+    event.preventDefault();
+    // Get the content of the <p> tag
+    var userMessage = document.getElementById("user-message").textContent.trim();
+    var dateInput = document.getElementById("date-input").value;
+    
+    // Check if the <p> tag is empty
+    if (userMessage === "") {
+        alert("Login first");
+    } 
+    else if (dateInput === "") {
+        alert("enter date");
+    } 
+    else {
+        // If the <p> tag has content, navigate to the buslist.html page
+        window.location.href = "http://localhost/Book-My-Bus/buslist.php";
+    }
+}
+function searchBus() {
+            const date = document.getElementById("date-input").value;
+            if (date) {
+                // Redirect to buslist.php with the selected date as a query parameter
+                window.location.href = "buslist.php?date=" + date;
+            } else {
+                alert("Please select a date.");
+            }
+        }    
+        
+        
+        </script>
     </body>
 </html>

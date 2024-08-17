@@ -15,15 +15,15 @@ body{
     width: 80%;
     background-color: white;
     margin-top: 5%;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
     box-shadow: 1px 1px 20px black;
 }
 .login-section{
     height:80vh;
     width: 35%;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

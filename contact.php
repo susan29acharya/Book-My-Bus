@@ -1,3 +1,21 @@
+<?php
+session_start();
+// Check if the user is logged in
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    // If not logged in, redirect to login page
+    header("Location: http://localhost/Book-My-Bus/login.php");
+    exit;
+}
+
+// Get the username from the session if logged in
+$username = htmlspecialchars($_SESSION['username']);
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,15 +50,44 @@
                 <!--login signup section ---------------------------------------->
                 <div class="login-signup">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <a href="login.html"><p>Login</p></a>
+                    <a href="login.php"><p>Login</p></a>
 
                     <i class="fa-solid fa-user-plus"></i>
-                    <a href="signup.html"><p>Signup</p></a>
+                    <a href="signup.php"><p>Signup</p></a>
 
                 </div>
             </div>
 
+        </div><div class="nav">
+                <div class="nav-content">
+
+                    <!--follow section ---------------------------------------->
+                    <div class="follow">
+                        <p>Follow:</p>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+
+                    <!--contact section ---------------------------------------->
+                    <i class="fa-solid fa-phone"></i><p>9800000000</p>
+                    <i class="fa-solid fa-phone"></i><p>9800000000</p>
+                    <i
+                        class="fa-regular fa-envelope"></i><p>bookmybus@gmail.com</p>
+
+                        <p id="user-message">Hello, <?php echo $username; ?>!</p>
+        
+
+                    <!--login signup section ---------------------------------------->
+                    <div class="login-signup">
+
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="logout.php"><p>Logout</p></a>
+
         </div>
+                </div>
+
+            </div>
         <!--End of nav bar section ---------------------------------------->
 
         <!-- nav bar 2 section ---------------------------------------->
@@ -54,10 +101,10 @@
             <!-- nav list  section ---------------------------------------->
             <div class="nav-list">
                 <ul>
-                    <li><a href="span.html">home</a></li>
-                    <li><a href="print.html" target="_blank">manage ticket</a></li>
+                    <li><a href="span.php">home</a></li>
+                    <li><a href="print.php" target="_blank">manage ticket</a></li>
                     <li><a href="#">home</a></li>
-                    <li><a href="contact.html">contact us</a></li>
+                    <li><a href="contact.php">contact us</a></li>
                 </ul>
 
             </div>

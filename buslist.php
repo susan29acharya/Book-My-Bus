@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+$isLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -37,15 +45,16 @@
                     <i
                         class="fa-regular fa-envelope"></i><p>bookmybus@gmail.com</p>
 
+                        <p id="user-message">Hello, <?php echo $username; ?>!</p>
+        
+
                     <!--login signup section ---------------------------------------->
                     <div class="login-signup">
-                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        <a href="login.html"><p>Login</p></a>
 
-                        <i class="fa-solid fa-user-plus"></i>
-                        <a href="signup.html"><p>Signup</p></a>
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="logout.php"><p>Logout</p></a>
 
-                    </div>
+        </div>
                 </div>
 
             </div>
@@ -62,11 +71,11 @@
                 <!-- nav list  section ---------------------------------------->
                 <div class="nav-list">
                     <ul>
-                        <li><a href="span.html">home</a></li>
-                        <li><a href="print.html">manage
+                        <li><a href="span.php">home</a></li>
+                        <li><a href="print.php">manage
                                 ticket</a></li>
                         <li><a href="#">home</a></li>
-                        <li><a href="contact.html">contact us</a></li>
+                        <li><a href="contact.php">contact us</a></li>
                     </ul>
 
                 </div>
@@ -79,14 +88,16 @@
                     <h5>kakarvitta to kathmandu bus tickets</h5>
 
                 </div>
+                <?php
+    // Retrieve the selected date from the query parameter
+    $selectedDate = isset($_GET['date']) ? $_GET['date'] : '';
+    ?>
                 
                 <div class="kt-flex">
-
-                    <input type="text" value="kakarvitta" disabled>
-                    <input type="text" value="kathmandu" disabled>
-                    <input type="date" disabled>
-
-                </div>
+        <input type="text" value="kakarvitta" disabled>
+        <input type="text" value="kathmandu" disabled>
+        <input type="date" value="<?php echo htmlspecialchars($selectedDate); ?>" disabled>
+    </div>
 
             </div>
 
@@ -251,7 +262,7 @@
                                             id="selected-seats-1"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-1"></span></h5>
-                                    <button>Continue</button>
+                                            <button onclick="checkAndContinue()">Continue</button>
                                     <button
                                         onclick="resetSelection('seatList1')">Reset</button>
                                 </div>
@@ -404,7 +415,7 @@
                                             id="selected-seats-2"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-2"></span></h5>
-                                    <button>Continue</button>
+                                            <button onclick="checkAndContinue()">Continue</button>
                                     <button
                                         onclick="resetSelection('seatList2')">Reset</button>
                                 </div>
@@ -557,7 +568,7 @@
                                             id="selected-seats-3"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-3"></span></h5>
-                                    <button>Continue</button>
+                                            <button onclick="checkAndContinue()">Continue</button>
                                     <button
                                         onclick="resetSelection('seatList3')">Reset</button>
                                 </div>
@@ -709,7 +720,7 @@
                                             id="selected-seats-4"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-4"></span></h5>
-                                    <button>Continue</button>
+                                            <button onclick="checkAndContinue()">Continue</button>
                                     <button
                                         onclick="resetSelection('seatList4')">Reset</button>
                                 </div>
@@ -795,6 +806,31 @@ const seatData = {
             seatData[listId].selectedSeats = [];
             updateDisplay(listId);
         }
+
+        function checkAndContinue() {
+    // Define the seat list IDs
+    const seatLists = ['seatList1', 'seatList2', 'seatList3', 'seatList4'];
+    let anySeatsSelected = false;
+
+    // Check each seat list
+    for (const listId of seatLists) {
+        const selectedSeats = document.getElementById(`selected-seats-${listId.slice(-1)}`).textContent.trim();
+        
+        if (selectedSeats !== "") {
+            anySeatsSelected = true;
+            break; // Exit loop if at least one seat is selected
+        }
+    }
+
+    // If no seats are selected in any seat list, show alert; otherwise, redirect
+    if (!anySeatsSelected) {
+        alert("Please select at least one seat.");
+    } else {
+        // Redirect to form.php
+        window.location.href = "form.php";
+    }
+}
+
 
 
     </script>

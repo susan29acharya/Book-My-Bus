@@ -15,7 +15,9 @@
     margin-left: 0.5%;
     border-radius: 5px;
     border-bottom: 2px solid white;
-    background-color: #191919;
+    background-color: black;
+    display: flex;
+    align-items: center;
     position:fixed;
     top: 0;
     z-index: 3;
@@ -38,11 +40,12 @@
 .follow i{
     margin-right: 15%;
     font-size: 1.2em;
+    margin-top:15%;
 }
 .nav-content i{
     color: #f9004d;
     padding-right: 2%;
-    padding-top: 5px;
+    margin-top: 0.5%;
 }
 .nav-content p{
     padding-right: 5%;
@@ -52,18 +55,24 @@
 
 .login-signup{
     display: flex;
-    margin-left: 27%;
+    margin-left: 90%;
+    position: fixed;
 }
 .login-signup i{
     margin-left: 30%;
+    margin-right: 10%;
+    margin-top: 6%;
 }
 .login-signup a{
     text-decoration: none;
     font-family: "Poppins", sans-serif;
 }
-.login-signup p{
-    margin-left:4%;
-    font-family: "Poppins", sans-serif;
+
+#user-message {
+    margin-left: 5%;
+    padding: 0;
+    display: inline; /* Ensure text does not break into multiple lines */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 #nav2{
@@ -156,8 +165,8 @@ ul li a:hover::after {
 .kt-flex input{
     height: 7vh;
     width: 30%;
+    border: none;
     margin-right: 5%;
-    border: 1px solid #f9004d;
     padding-left: 15px;
     border-radius: 7px;
     text-transform: capitalize;
