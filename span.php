@@ -320,9 +320,9 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
             <div class="links">
                 <h5>Useful links</h5>
                 <li><a href="#nav2">Home</a></li>
-                <li><a href="print.html">Manage Tickets</a></li>
+                <li><a href="print.php">Manage Tickets</a></li>
                 <li><a href="#">abcd</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
 
             </div>
 
