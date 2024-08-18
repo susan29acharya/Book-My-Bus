@@ -124,7 +124,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                 <div class="time-flex">
                                     <h4>05:00 PM </h4>
                                     <p>--------------------------------</p><h4>
-                                        15:00 PM</h4>
+                                        5:00 AM</h4>
                                 </div>
 
                                 <div class="h6-flex">
@@ -262,9 +262,25 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                             id="selected-seats-1"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-1"></span></h5>
+                                            <div class="buttondiv">
                                             <button onclick="checkAndContinue('busName1', 'selected-seats-1', 'total-amount-1')">Continue</button>
-                                    <button
+                                                <button
                                         onclick="resetSelection('seatList1')">Reset</button>
+                                        </div>
+
+                                        <div class="seat-legend">
+                                        <div class="available">
+                                        <h6></h6><p>Available</p>
+                                        </div>
+                                        <div class="choosed">
+                                        <h6></h6><p> Choosed</p>
+                                        </div>
+                                        <div class="booked">
+                                        <h6></h6><p> Booked</p>
+                                        </div>
+                                         </div>
+
+                                        
                                 </div>
                             </div>
 
@@ -278,7 +294,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                 <div class="time-flex">
                                     <h4>03:00 PM </h4>
                                     <p>--------------------------------</p><h4>
-                                        13:00 PM</h4>
+                                        3:00 AM</h4>
                                 </div>
 
                                 <div class="h6-flex">
@@ -415,9 +431,23 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                             id="selected-seats-2"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-2"></span></h5>
+                                            <div class="buttondiv">
                                             <button onclick="checkAndContinue('busName2', 'selected-seats-2', 'total-amount-2')">Continue</button>
-                                    <button
+                                                <button
                                         onclick="resetSelection('seatList2')">Reset</button>
+                                        </div>
+
+                                        <div class="seat-legend">
+                                        <div class="available">
+                                        <h6></h6><p>Available</p>
+                                        </div>
+                                        <div class="choosed">
+                                        <h6></h6><p> Choosed</p>
+                                        </div>
+                                        <div class="booked">
+                                        <h6></h6><p> Booked</p>
+                                        </div>
+                                         </div>
                                 </div>
                             </div>
 
@@ -431,7 +461,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                 <div class="time-flex">
                                     <h4>04:00 PM </h4>
                                     <p>--------------------------------</p><h4>
-                                        14:00 PM</h4>
+                                        4:00 AM</h4>
                                 </div>
 
                                 <div class="h6-flex">
@@ -568,9 +598,23 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                             id="selected-seats-3"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-3"></span></h5>
+                                            <div class="buttondiv">
                                             <button onclick="checkAndContinue('busName3', 'selected-seats-3', 'total-amount-3')">Continue</button>
-                                    <button
+                                                <button
                                         onclick="resetSelection('seatList3')">Reset</button>
+                                        </div>
+
+                                        <div class="seat-legend">
+                                        <div class="available">
+                                        <h6></h6><p>Available</p>
+                                        </div>
+                                        <div class="choosed">
+                                        <h6></h6><p> Choosed</p>
+                                        </div>
+                                        <div class="booked">
+                                        <h6></h6><p> Booked</p>
+                                        </div>
+                                         </div>
                                 </div>
                             </div>
                         </div>
@@ -581,9 +625,9 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                             <h5 id="busName4" >Prime Super Deluxe</h5>
                                 <p>Super deluxe</p>
                                 <div class="time-flex">
-                                    <h4>03:00 PM </h4>
+                                    <h4>03:30 PM </h4>
                                     <p>--------------------------------</p><h4>
-                                        13:00 PM</h4>
+                                        3:30 AM</h4>
                                 </div>
 
                                 <div class="h6-flex">
@@ -720,9 +764,24 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                                             id="selected-seats-4"></span></h5>
                                     <h5>Total amount: <span
                                             id="total-amount-4"></span></h5>
+
+                                            <div class="buttondiv">
                                             <button onclick="checkAndContinue('busName4', 'selected-seats-4', 'total-amount-4')">Continue</button>
-                                    <button
+                                                <button
                                         onclick="resetSelection('seatList4')">Reset</button>
+                                        </div>
+
+                                        <div class="seat-legend">
+                                        <div class="available">
+                                        <h6></h6><p>Available</p>
+                                        </div>
+                                        <div class="choosed">
+                                        <h6></h6><p> Choosed</p>
+                                        </div>
+                                        <div class="booked">
+                                        <h6></h6><p> Booked</p>
+                                        </div>
+                                         </div>
                                 </div>
                             </div>
                         </div>
@@ -781,33 +840,44 @@ function hidee() {
 
 
 const seatData = {
-            seatList1: { selectedSeats: [], seatPrice: 2000 },
-            seatList2: { selectedSeats: [], seatPrice: 1700 },
-            seatList3: { selectedSeats: [], seatPrice: 1950 },
-            seatList4: { selectedSeats: [], seatPrice: 1800 }
-        };
+    seatList1: { selectedSeats: [], seatPrice: 2000 },
+    seatList2: { selectedSeats: [], seatPrice: 1700 },
+    seatList3: { selectedSeats: [], seatPrice: 1950 },
+    seatList4: { selectedSeats: [], seatPrice: 1800 }
+};
 
-        function selectSeat(listId, seat) {
-            const list = seatData[listId];
-            if (!list.selectedSeats.includes(seat)) {
-                list.selectedSeats.push(seat);
-                updateDisplay(listId);
-            }
-        }
+// Function to select a seat
+function selectSeat(listId, seat) {
+    const seatElement = document.querySelector(`[onclick="selectSeat('${listId}', '${seat}')"]`);
 
-        function updateDisplay(listId) {
-            const list = seatData[listId];
-            const listNumber = listId.replace('seatList', '');
-            document.getElementById(`selected-seats-${listNumber}`).innerText = list.selectedSeats.join(', ');
-            document.getElementById(`total-amount-${listNumber}`).innerText = list.selectedSeats.length * list.seatPrice;
-        }
+    if (seatElement.classList.contains('booked')) {
+        return; // If the seat is booked, do nothing
+    }
 
-        function resetSelection(listId) {
-            seatData[listId].selectedSeats = [];
-            updateDisplay(listId);
-        }
+    const list = seatData[listId];
+    if (!list.selectedSeats.includes(seat)) {
+        list.selectedSeats.push(seat);
+        seatElement.style.backgroundColor = "blue"; // Set selected seat background to blue
+        seatElement.style.color = "white"; // Set selected seat text to white
+    } else {
+        list.selectedSeats = list.selectedSeats.filter(s => s !== seat);
+        seatElement.style.backgroundColor = ""; // Reset background color
+        seatElement.style.color = ""; // Reset text color
+    }
 
-        function checkAndContinue(busId, seatsId, totalAmountId) {
+    updateDisplay(listId);
+}
+
+// Function to update seat display
+function updateDisplay(listId) {
+    const list = seatData[listId];
+    const listNumber = listId.replace('seatList', '');
+    document.getElementById(`selected-seats-${listNumber}`).innerText = list.selectedSeats.join(', ');
+    document.getElementById(`total-amount-${listNumber}`).innerText = list.selectedSeats.length * list.seatPrice;
+}
+
+// Function to check selected seats and continue
+function checkAndContinue(busId, seatsId, totalAmountId) {
     // Save the bus name
     const busName = document.getElementById(busId).innerText;
     localStorage.setItem('busName', busName);
@@ -841,6 +911,69 @@ const seatData = {
     }
 }
 
+// Function to reset the seat selection
+function resetSelection(listId) {
+    const list = seatData[listId];
+    list.selectedSeats = [];
+
+    // Reset the colors of all seats in the list
+    const seatElements = document.querySelectorAll(`.seat[onclick*="'${listId}'"]`);
+    seatElements.forEach(seatElement => {
+        const seatId = seatElement.textContent;
+
+        // Only reset seats that are not booked
+        if (!seatElement.classList.contains('booked')) {
+            seatElement.style.backgroundColor = "white"; // Set background color to white
+            seatElement.style.color = "black"; // Set text color to black
+        }
+    });
+
+    updateDisplay(listId);
+}
+
+// Function to randomly mark 20 seats as booked
+function markSeatsAsBooked() {
+    // Get all seat divs
+    const allSeats = document.querySelectorAll('.seat');
+    const totalSeats = allSeats.length;
+
+    // Define the minimum and maximum number of seats to be booked
+    const minBookedSeats = 15;
+    const maxBookedSeats = 20;
+
+    // Ensure the total seats are enough to book the minimum required
+    if (totalSeats < minBookedSeats) {
+        console.error("Not enough seats to book the minimum required seats.");
+        return;
+    }
+
+    // Randomly determine how many seats to book, ensuring it's between min and max
+    const numSeatsToBook = Math.floor(Math.random() * (maxBookedSeats - minBookedSeats + 1)) + minBookedSeats;
+
+    // Create a set to store randomly selected seat indices
+    const bookedIndices = new Set();
+
+    // Randomly select seats until the desired number is reached
+    while (bookedIndices.size < numSeatsToBook) {
+        const randomIndex = Math.floor(Math.random() * totalSeats);
+        bookedIndices.add(randomIndex);
+    }
+
+    // Mark the selected seats as booked
+    bookedIndices.forEach(index => {
+        const seatElement = allSeats[index];
+        seatElement.style.backgroundColor = "black"; // Set background color to black
+        seatElement.style.color = "white"; // Set text color to white
+        seatElement.classList.add("booked"); // Add a class to identify booked seats
+        seatElement.setAttribute("title", "Already booked"); // Add hover text
+    });
+}
+
+
+// Initialize the page with booked seats
+window.onload = function() {
+    markSeatsAsBooked();
+};
 
 
 
