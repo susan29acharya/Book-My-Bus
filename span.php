@@ -347,36 +347,26 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
         </div>
 
 
-<script>
-function checkLogin(event) {
-    event.preventDefault();
-    // Get the content of the <p> tag
-    var userMessage = document.getElementById("user-message").textContent.trim();
-    var dateInput = document.getElementById("date-input").value;
-    
-    // Check if the <p> tag is empty
-    if (userMessage === "") {
-        alert("Login first");
-    } 
-    else if (dateInput === "") {
-        alert("enter date");
-    } 
-    else {
-        // If the <p> tag has content, navigate to the buslist.html page
-        window.location.href = "http://localhost/Book-My-Bus/buslist.php";
+        <script>
+    // Function to search for bus based on selected date
+    function searchBus() {
+        const dateInput = document.getElementById('date-input').value;
+        const inputDate = new Date(dateInput);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Set time to midnight to ignore time differences
+
+        if (dateInput === '') {
+            // If the date input is empty
+            alert('Enter the date');
+        } else if (inputDate < today) {
+            // If the date is in the past
+            alert('Date cannot be in the past');
+        } else {
+            // If the date is today or in the future
+            window.location.href = 'buslist.php?date=' + encodeURIComponent(dateInput);
+        }
     }
-}
-function searchBus() {
-            const date = document.getElementById("date-input").value;
-            if (date) {
-                // Redirect to buslist.php with the selected date as a query parameter
-                window.location.href = "buslist.php?date=" + date;
-            } else {
-                alert("Please select a date.");
-            }
-        }    
-        
-        
-        </script>
+</script>
+
     </body>
 </html>
