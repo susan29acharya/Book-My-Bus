@@ -27,18 +27,21 @@ if ($conn->connect_error) {
 // Initialize error message variable
 $error = "";
 
-// Handle form submission
+// Handle form submission for ticket cancellation
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $ticketNumber = $_POST['ticket_number'];
-    $mobileNumber = $_POST['mobile_number'];
+    $ticketNumber = $_POST['cancel_ticket_number'];
+    $mobileNumber = $_POST['cancel_date'];
 
     // Sanitize inputs
     $ticketNumber = $conn->real_escape_string($ticketNumber);
     $mobileNumber = $conn->real_escape_string($mobileNumber);
 
     // Check if the ticket number and mobile number match a record in the database
-    $sql = "SELECT * FROM tickets WHERE ticketnumber = '$ticketNumber' AND mobilenumber = '$mobileNumber'";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM tickets WHERE ticketnumber = ? AND mobilenumber = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $ticketNumber, $mobileNumber);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Ticket found, redirect to pdf.php with the ticket number and mobile number
@@ -47,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "No matching ticket found.";
     }
+
+    $stmt->close();
 }
 
 $conn->close();
@@ -67,6 +72,12 @@ $conn->close();
                 alert("<?php echo $error; ?>");
             <?php endif; ?>
         };
+
+        // Function to clear the input fields
+        function clearInputs() {
+            document.getElementById('ticketnumber').value = "";
+            document.getElementById('mobilenumber').value = "";
+        }
     </script>
 </head>
 <body>
@@ -117,22 +128,22 @@ $conn->close();
             <div class="ticket-flex">
                 <!-- Print form -->
                 <div class="print-form">
-                <form action="pdf2.php" method="get">
-    <h1>Print Ticket</h1>
-    <input type="text" id="ticketnumber" name="ticketnumber" placeholder="Ticket number" required>
-    <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Mobile number" required><br>
-    <button type="submit">Search</button>
-</form>
+                    <form action="pdf2.php" method="get">
+                        <h1>Print Ticket</h1>
+                        <input type="text" id="ticketnumber" name="ticketnumber" placeholder="Ticket number" required>
+                        <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Mobile number" required><br>
+                        <button type="submit">Search</button>
+                    </form>
                 </div>
 
                 <!-- Cancel form -->
                 <div class="cancle-form">
-                    <form method="POST" action="cancel_ticket.php">
+                    <form method="POST" action="cancelticket.php">
                         <h1>Cancel Ticket</h1>
                         <p><b>Note:</b> <span>Please be advised that all tickets are non-refundable.</span></p>
                         <input type="number" name="cancel_ticket_number" placeholder="Ticket number" required><br>
                         <input type="number" name="cancel_date" placeholder="Mobile number" required><br>
-                        <button type="submit">Cancel</button>
+                        <button type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -140,11 +151,10 @@ $conn->close();
 
     </div>
     <script>
-        let ticket = document.getElementById('ticketnumber').value;
-        let mobile = document.getElementById('mobilenumber').value;
-        function remove(){
-            ticket.value="";
-            mobile.value="";
+        // Function to clear the input fields
+        function clearInputs() {
+            document.getElementById('ticketnumber').value = "";
+            document.getElementById('mobilenumber').value = "";
         }
     </script>
 </body>

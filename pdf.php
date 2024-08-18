@@ -46,7 +46,7 @@ $conn->close();
     <style>
         .print {
             font-family: Arial, sans-serif;
-            height: 90vh;
+            height: 92vh;
             width: 70%;
             margin-left: 15%;
             margin-top: 2%;
@@ -118,12 +118,14 @@ $conn->close();
         }
         .print-btn {
             display: block;
-            width: 100px;
+            width: 150px;
             margin: 20px auto;
             padding: 10px 20px;
             text-align: center;
             background-color: #007bff;
             color: white;
+            font-size:16px;
+            letter-spacing:1px;
             border: none;
             margin-top: 4%;
             border-radius: 5px;
@@ -245,7 +247,7 @@ $conn->close();
                 <p><strong>Mobile Number:</strong> <?php echo $mobilenumber; ?></p>
             </div>
         </div>
-        <button class="print-btn" onclick="printAndRedirect()">Print</button>
+        <button class="print-btn" onclick="printAndRedirect()">Print Ticket</button>
         <div class="note">
             <p>Thank you for choosing BookMyBus for your travel needs. We are delighted to have been a part of your journey and appreciate your trust in our services.</p>
         </div>
