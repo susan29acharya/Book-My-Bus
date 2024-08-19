@@ -58,8 +58,8 @@ $conn->close();
         .print {
             font-family: Arial, sans-serif;
             height: 92vh;
-            width: 70%;
-            margin-left: 15%;
+            width: 62%;
+            margin-left: 18%;
             margin-top: 2%;
             border: 1px solid black;
             border-radius: 10px;
@@ -86,6 +86,7 @@ $conn->close();
         }
         .destination {
             display: flex;
+            margin-left:8%;
         }
         .destination p {
             font-size: 16px;
@@ -95,6 +96,7 @@ $conn->close();
         .ticket-details {
             margin: 1px 0;
             display: flex;
+            margin-left:8%;
         }
         .ticket-details p {
             font-size: 16px;
