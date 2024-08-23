@@ -25,23 +25,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if fields are not empty
     if (!empty($username) && !empty($email) && !empty($password)) {
-        // Hash the password
-        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        // Check if the username or email already exists
+        $checkSql = "SELECT id FROM signup WHERE username = ? OR email = ?";
+        $stmt = $conn->prepare($checkSql);
+        $stmt->bind_param("ss", $username, $email);
+        $stmt->execute();
+        $stmt->store_result();
 
-        // Prepare and execute SQL statement
-        $sql = "INSERT INTO signup (username, email, password) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $username, $email, $hashed_password);
-
-        if ($stmt->execute()) {
-            // Display alert and redirect to login page
-            echo "<script>
-                    alert('Signup successful!');
-                    window.location.href = 'login.php';
-                  </script>";
-            exit(); // Ensure no further code is executed after the script
+        if ($stmt->num_rows > 0) {
+            // User already exists
+            $message = "Already have an account.";
         } else {
-            $message = "Error: " . $stmt->error;
+            // Hash the password
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+
+            // Prepare and execute SQL statement
+            $insertSql = "INSERT INTO signup (username, email, password) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($insertSql);
+            $stmt->bind_param("sss", $username, $email, $hashed_password);
+
+            if ($stmt->execute()) {
+                // Display alert and redirect to login page
+                echo "<script>
+                        alert('Signup successful!');
+                        window.location.href = 'login.php';
+                      </script>";
+                exit(); // Ensure no further code is executed after the script
+            } else {
+                $message = "Error: " . $stmt->error;
+            }
         }
 
         $stmt->close();

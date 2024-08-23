@@ -341,7 +341,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
             <h5>Useful links</h5>
             <li><a href="#nav2">Home</a></li>
             <li><a href="print.php">Manage Tickets</a></li>
-            <li><a href="#">abcd</a></li>
+            <li><a href="tours.php">Tour</a></li>
             <li><a href="contact.php">Contact</a></li>
 
         </div>
