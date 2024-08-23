@@ -113,7 +113,7 @@ $conn->close();
         }
         .destination {
             display: flex;
-            margin-left:8%;
+            margin-left:2%;
         }
         .destination p {
             font-size: 16px;
@@ -123,7 +123,7 @@ $conn->close();
         .ticket-details {
             margin: 1px 0;
             display: flex;
-            margin-left:8%;
+            margin-left:2%;
         }
         .ticket-details p {
             font-size: 16px;
