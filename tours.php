@@ -26,7 +26,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="tour.css">
 </head>
 
 <body>
@@ -125,40 +125,71 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
 
         </div>
 
-        <!-- cancle and print ticket section  ---------------------------->
-        <div class="contact-form">
+        <div class="tours">
+            <h2>Popular Tours</h2>
 
-            <h2>Send a message</h2>
-            <p>Our team will contact you soon !</p>
+            <div class="container">
 
-            <div class="flex-container">
+                <div class="info">
+                    <h3>Muktinath</h3>
+                    <p>Muktinath, nestled in the heart of Nepal, is a sacred destination revered by both Hindus and
+                        Buddhists. Known for its ancient temple and natural beauty, Muktinath offers a peaceful escape
+                        and spiritual rejuvenation.</p>
 
-                <form action="">
-                    <div class="form-left-section">
-                        <label>Name</label><br>
-                        <input type="text" id="name"><br>
-
-                        <label>Mobile</label><br>
-                        <input type="number" id="mobile"><br>
-
-                        <label>Subject</label><br>
-                        <input type="text" id="subject"><br>
-
-                        <button onclick="submitform(event)"><a href="#">Submit</a></button>
+                    <div class="priceinfo">
+                        <a href="https://en.wikipedia.org/wiki/Muktinath" target="_blank">Read more</a>
+                        <h4>NPR 10000/P</h4>
                     </div>
+                </div>
+                <div class="image">
+                    <img src="All image/mukti.jpg">
+                </div>
 
-                    <div class="form-right-section">
-                        <label>Email</label><br>
-                        <input type="email" id="email"><br>
 
-                        <label>Address</label><br>
-                        <input type="text" id="Address"><br>
 
-                        <label>Message</label><br>
-                        <textarea id="message"></textarea>
+            </div>
 
+            <div class="container2">
+
+                <div class="info">
+                    <h3>Pathivara</h3>
+                    <p>Pathibhara Devi Temple is a sacred Hindu pilgrimage site located in the Taplejung district of
+                        eastern Nepal. It is dedicated to Goddess Pathibhara, who is believed to fulfill the wishes of
+                        her devotees.</p>
+
+                    <div class="priceinfo">
+                        <a href="https://en.wikipedia.org/wiki/Pathibhara_Devi_Temple" target="_blank">Read more</a>
+                        <h4>NPR 4000/P</h4>
                     </div>
-                </form>
+                </div>
+                <div class="image">
+                    <img src="All image/pathi.webp">
+                </div>
+
+
+
+            </div>
+
+            <div class="container3">
+
+                <div class="info">
+                    <h3>Pokhara</h3>
+                    <p>Pokhara is a metropolitan city located in central Nepal, which serves as the capital of Gandaki
+                        Province and is declared as the tourism capital of Nepal.It is the second most populous city of
+                        the nation after Kathmandu. </p>
+
+
+                    <div class="priceinfo">
+                        <a href="https://en.wikipedia.org/wiki/Pokhara" target="_blank">Read more</a>
+
+                        <h4>NPR 11000/P</h4>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="All image/pokhara.jfif">
+                </div>
+
+
 
             </div>
 
@@ -168,35 +199,9 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
         </div>
 
 
-
-
-
+    </div>
 
     </div>
 </body>
-<script>
-    let name = document.getElementById('name');
-    let mobile = document.getElementById('mobile');
-    let subject = document.getElementById('subject');
-    let email = document.getElementById('email');
-    let Address = document.getElementById('Address');
-    let message = document.getElementById('message');
-
-    function submitform(event) {
-        event.preventDefault();
-        if (name.value === "" || mobile.value === "" || subject.value === "" || email.value === "" || Address.value === "" || message.value === "") {
-            alert("Fill the form");
-        }
-        else {
-            alert("Message sent!! we will contact you soon");
-            name.value = "";
-            mobile.value = "";
-            subject.value = "";
-            email.value = "";
-            Address.value = "";
-            message.value = "";
-        }
-    }
-</script>
 
 </html>

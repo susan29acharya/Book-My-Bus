@@ -59,15 +59,17 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print/Cancel Ticket</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="print.css">
     <script>
-        window.onload = function() {
+        window.onload = function () {
             <?php if ($error): ?>
                 alert("<?php echo $error; ?>");
             <?php endif; ?>
@@ -80,6 +82,7 @@ $conn->close();
         }
     </script>
 </head>
+
 <body>
     <div class="print_ticket">
         <!-- Navigation bar section -->
@@ -93,14 +96,19 @@ $conn->close();
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 <!-- Contact section -->
-                <i class="fa-solid fa-phone"></i><p>9800000000</p>
-                <i class="fa-solid fa-phone"></i><p>9800000000</p>
-                <i class="fa-regular fa-envelope"></i><p>bookmybus@gmail.com</p>
+                <i class="fa-solid fa-phone"></i>
+                <p>9800000000</p>
+                <i class="fa-solid fa-phone"></i>
+                <p>9800000000</p>
+                <i class="fa-regular fa-envelope"></i>
+                <p>bookmybus@gmail.com</p>
                 <p id="user-message">Hello, <?php echo $username; ?>!</p>
                 <!-- Login/signup section -->
                 <div class="login-signup">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    <a href="logout.php"><p>Logout</p></a>
+                    <a href="logout.php">
+                        <p>Logout</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,14 +118,15 @@ $conn->close();
         <div class="nav2">
             <!-- Logo section -->
             <div class="logo-sec">
-                <i class="fa-solid fa-bus"></i><h3>Book My Bus</h3>
+                <i class="fa-solid fa-bus"></i>
+                <h3>Book My Bus</h3>
             </div>
             <!-- Nav list section -->
             <div class="nav-list">
                 <ul>
                     <li><a href="span.php">Home</a></li>
                     <li><a href="print.php" target="_blank">Manage Ticket</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="tours.php">tour</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
@@ -131,7 +140,8 @@ $conn->close();
                     <form action="pdf2.php" method="get">
                         <h1>Print Ticket</h1>
                         <input type="text" id="ticketnumber" name="ticketnumber" placeholder="Ticket number" required>
-                        <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Mobile number" required><br>
+                        <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Mobile number"
+                            required><br>
                         <button type="submit">Search</button>
                     </form>
                 </div>
@@ -158,4 +168,5 @@ $conn->close();
         }
     </script>
 </body>
+
 </html>

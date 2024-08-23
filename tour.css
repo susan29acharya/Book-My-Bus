@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
     
 }
-.print_ticket{
+.contact-page{
     height:90vh;
     width: 100%;
     border-radius: 5px;
@@ -73,7 +73,6 @@
     display: inline; /* Ensure text does not break into multiple lines */
     white-space: nowrap; /* Prevent text from wrapping */
 }
-
 .nav2{
     height: 8.5vh;
     width: 90%;
@@ -147,155 +146,120 @@ ul li a::after {
 ul li a:hover::after {
     width: 100%;
 }
-.cancle-print-section{
-    height: 70vh;
+.tours{
+    height: 150vh;
     width: 90%;
+    margin-left: 5%;
 }
-
-.ticket-flex{
-    height: 70vh;
-    width: 90%;
-    display: flex;
-    margin-top: 5%;
-    margin-left: 6%;
-
-}
-@keyframes ticketflex {
-    from{
-        opacity: 0;
-        scale: 0;
-    }
-    to{
-        opacity: 1;
-        scale: 1;
-    }
-}
-.print-form{
-    height:50vh;
-    width: 27%;
-    background-color: #f9004f;
-    position: absolute;
-    z-index: 2;
-    margin-top: 2.5%;
-    padding: 2%;
-    border-radius: 20px;
-    margin-left: 10%;
-    box-shadow: 2px 2px 5px #191919;
-    animation: ticketflex linear;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-}
-.print-form h1{
-    font-size: 25px;
-    font-family: "Poppins", sans-serif;
+.tours h2{
     letter-spacing: 1px;
-    text-align: center;
-    color: white;
-    padding-top: 2%;
-    padding-bottom: 15%;
-}
-
-.print-form form input{
-    height: 6.5vh;
-    width: 74%;
-    margin-bottom: 8%;
-    padding: 7px;
-    font-size: 17px;
-    margin-left: 10%;
-    border-radius: 4px;
-    border: none;
-
-}
-.print-form form input::placeholder{
-    font-size: 14px;
-    letter-spacing: 1px;
-    font-family: "Poppins", sans-serif;
-}
-.print-form form button{
-    height: 5.5vh;
-    width: 35%;
-    border: none;
-    color: white;
-    background-color: black;
-    border-radius: 7px;
-    margin-left: 29%;
-    margin-top: 7%;
-    font-size: 15px;
-    letter-spacing: 1px;
-    transition: 0.5s ease;
-}
-
-.print-form form button:hover{
-    background-color: white;
-    cursor: pointer;
+    font-size: 26px;
     color: #f9004d;
-}
-
-.cancle-form{
-    height:60vh;
-    width: 50%;
-    box-shadow: 2px 2px 5px #191919;
-    border-radius: 20px;
-    margin-left: 25%;
-    position: absolute;
-    z-index: 1;
-    animation: ticketflex linear;
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-}
-.cancle-form h1{
-    font-size: 25px;
-    font-family: "Poppins", sans-serif;
-    letter-spacing: 1px;
-    margin-left: 40%;
-    color: black;
-    padding-top: 4%;
-}
-.cancle-form p{
-    margin-left: 35%;
-    padding-top: 3%;
-    padding-bottom: 1%;
+    text-align: center;
+    padding-top: 2%;
     font-family: "Poppins", sans-serif;
 }
-.cancle-form span{
-    color:#f9004d;
-}
-
-.cancle-form form input{
-    height: 6.5vh;
-    width: 37%;
+.container,.container3{
+    height: 40vh;
+    width: 60%;
     margin-top: 3%;
-    font-size: 17px;
-    margin-bottom: 1%;
-    padding: 7px;
-    margin-left: 35%;
-    border-radius: 4px;
-    background-color: whitesmoke;
-    border: none;
-
+    margin-bottom: 3%;
+    display: flex;
+    box-shadow: 1px 1px 7px #191919;
+    border-radius: 7px;
+    animation: left 1.5s linear forwards;
+    animation-delay: 0.1s;
+    }
+    
+@keyframes left {
+    0%{
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    33%{
+        transform: translateX(267px);
+    }
+    66%{
+        transform: translateX(134px);
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
-.cancle-form form input::placeholder{
-    font-size: 14px;
+.container2{
+    height: 40vh;
+    width: 60%; 
+    display: flex;
+    float: right;
+    margin-bottom: 3%;
+    box-shadow: 1px 1px 7px #191919;
+    border-radius: 7px;
+    animation: right 1.5s linear forwards;
+    animation-delay: 0.1s;
+}
+
+@keyframes right {
+    0%{
+        transform: translateX(-400px);
+        opacity: 0;
+    }
+    33%{
+        transform: translateX(-267px);
+    }
+    66%{
+        transform: translateX(-134px);
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.image{
+    height: 40vh;
+    width: 50%;
+}
+.image img{
+    height: 40vh;
+    width: 100%;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+.info{
+    height: 40vh;
+    width: 50%;
+    padding: 5px;
+    background-color: rgba(245, 245, 245, 0.619);
+}
+.info h3{
+    font-size: 21px;
     letter-spacing: 1px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #f9004d;
     font-family: "Poppins", sans-serif;
 }
-.cancle-form form button{
-    height: 6vh;
-    width: 17%;
-    border: none;
-    background-color: #f9004d;
-    border-radius: 7px;
-    margin-left: 45%;
-    margin-top: 5%;
-    color: white;
-    font-size: 16px;
+.info p{
+    text-align: justify;
     letter-spacing: 1px;
-    transition: 0.5s ease;
+    padding-bottom: 3%;
+    font-family: "Poppins", sans-serif;
+}
+.priceinfo{
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+.priceinfo a{
+    text-decoration: none;
+    margin-right: 35%;
+    margin-left: 1%;
+    font-family: "Poppins", sans-serif;
+}
+.priceinfo h4{
+    font-size: 19px;
+    color: #f9004d;
+    font-family: "Poppins", sans-serif;
 }
 
-.cancle-form form button:hover{
-    background-color: #191919;
-    cursor: pointer;
-    color: white;
-}
 

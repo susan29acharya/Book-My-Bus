@@ -62,15 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Capture PHP variables and embed them in JavaScript
             var message = "<?php echo addslashes($message); ?>";
             var redirect = "<?php echo addslashes($redirect); ?>";
@@ -84,13 +86,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (redirect) {
                 console.log("Redirecting to:", redirect); // Debugging line
-                setTimeout(function() {
+                setTimeout(function () {
                     window.location.href = redirect;
                 }, 500); // Increased delay to ensure alert is processed
             }
         });
     </script>
 </head>
+
 <body>
     <div class="login-container">
         <div class="login-section">
@@ -111,9 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="book-bus-info">
             <div class="image-p-section">
                 <img src="All image/logo.png">
-                <p>“Book my Bus” lets people find buses, check for bus/seat availability, book tickets, and pay online without any problem.</p>
+                <p>“Book my Bus” lets people find buses, check for bus/seat availability, book tickets, and pay online
+                    without any problem.</p>
             </div>
         </div>
     </div>
 </body>
+
 </html>
