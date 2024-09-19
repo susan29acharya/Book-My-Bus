@@ -27,31 +27,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if fields are not empty
     if (!empty($username) && !empty($password)) {
-        // Prepare and execute SQL statement
-        $sql = "SELECT password FROM signup WHERE username = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $stmt->store_result();
-
-        if ($stmt->num_rows > 0) {
-            // Bind the result
-            $stmt->bind_result($hashed_password);
-            $stmt->fetch();
-
-            // Verify the password
-            if (password_verify($password, $hashed_password)) {
-                $_SESSION['loggedin'] = true; // Set session variable for logged in
-                $_SESSION['username'] = $username; // Optionally store username in session
-                $redirect = "http://localhost/Book-My-Bus/span.php";
-            } else {
-                $message = "Invalid password.";
-            }
+        // Check for admin login
+        if ($username === 'admin' && $password === 'admin') {
+            $_SESSION['loggedin'] = true; // Set session variable for logged in
+            $_SESSION['username'] = $username; // Optionally store username in session
+            $redirect = "http://localhost/Book-My-Bus/admindash.php"; // Redirect to admin dashboard
         } else {
-            $message = "No user found with that username.";
-        }
+            // Prepare and execute SQL statement for customer login
+            $sql = "SELECT password FROM signup WHERE username = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->store_result();
 
-        $stmt->close();
+            if ($stmt->num_rows > 0) {
+                // Bind the result
+                $stmt->bind_result($hashed_password);
+                $stmt->fetch();
+
+                // Verify the password
+                if (password_verify($password, $hashed_password)) {
+                    $_SESSION['loggedin'] = true; // Set session variable for logged in
+                    $_SESSION['username'] = $username; // Optionally store username in session
+                    $redirect = "http://localhost/Book-My-Bus/span.php"; // Redirect to customer dashboard
+                } else {
+                    $message = "Invalid password.";
+                }
+            } else {
+                $message = "No user found with that username.";
+            }
+
+            $stmt->close();
+        }
     } else {
         $message = "All fields are required.";
     }
@@ -67,28 +74,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Capture PHP variables and embed them in JavaScript
             var message = "<?php echo addslashes($message); ?>";
             var redirect = "<?php echo addslashes($redirect); ?>";
-
-            console.log("Message:", message); // Debugging line
-            console.log("Redirect:", redirect); // Debugging line
 
             if (message) {
                 alert(message);
             }
 
             if (redirect) {
-                console.log("Redirecting to:", redirect); // Debugging line
                 setTimeout(function () {
                     window.location.href = redirect;
-                }, 500); // Increased delay to ensure alert is processed
+                }, 500); // Delay for alert to be processed
             }
         });
     </script>
@@ -109,13 +110,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit">Login</button>
                 </form>
             </div>
-            <p>New to Book My Bus? <a href="signup.php">Sign up</a></p>
+            <p>New to Book My Bus? <a href="signup.php">Sign up</a> </p>
+            <div class="admin">
+            <p><a href="adminlogin.php">Admin login</a></p>
+            </div>
         </div>
         <div class="book-bus-info">
             <div class="image-p-section">
                 <img src="All image/logo.png">
-                <p>“Book my Bus” lets people find buses, check for bus/seat availability, book tickets, and pay online
-                    without any problem.</p>
+                <p>“Book my Bus” lets people find buses, check for bus/seat availability, book tickets, and pay online without any problem.</p>
             </div>
         </div>
     </div>

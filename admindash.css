@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+.contact-page{
+    height:90vh;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.nav{
+    width: 99%;
+    height: 8vh;
+    margin-left: 0.5%;
+    border-radius: 5px;
+    border-bottom: 2px solid white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    top: 0;
+    z-index: 3;
+
+
+}
+.nav-content{
+    display: flex;
+    padding: 12px 5px;
+}
+.follow{
+    display: flex;
+    margin-right: 25%;
+    margin-left: 1%;
+}
+.follow p{
+   margin-right: 7%;
+   font-family: "Poppins", sans-serif;
+}
+.follow i{
+    margin-right: 15%;
+    font-size: 1.2em;
+}
+.nav-content i{
+    color: #f9004d;
+    padding-right: 2%;
+}
+.nav-content p{
+    padding-right: 5%;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+.login-signup{
+    display: flex;
+    margin-left: 90%;
+    position: fixed;
+}
+.login-signup i{
+    margin-left: 30%;
+    margin-right: 10%;
+}
+.login-signup a{
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+#user-message {
+    margin-left: 5%;
+    padding: 0;
+    display: inline; /* Ensure text does not break into multiple lines */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+.nav2{
+    height: 8.5vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    display: flex;
+}
+.logo-sec{
+    display: flex;
+    height: 10vh;
+    width: 30%;
+}
+.logo-sec i{
+    font-size: 2em;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-left: 2%;
+    color: #f9004d;
+}
+.logo-sec h3{
+    margin-top: 1%;
+    color: black;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: "Playwrite AR", cursive;
+}
+
+.ticket-booked{
+    height: 80vh;
+    width: 90%;
+    margin-left: 5%;
+}
+.ticket-booked h2{
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    padding-top: 1%;
+    text-align: center;
+}
+/* Style for the table */
+table {
+    width: 100%; /* Make the table take full width */
+    border-collapse: collapse;
+    margin-top: 2%; /* Combine borders of adjacent cells */
+}
+
+/* Style for table headers */
+th{
+    border: 1px solid #000; /* 2px solid border */
+    padding: 10px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #f9004d;
+    font-size: 17px;
+    font-family: "Poppins", sans-serif;
+}
+td{
+    border: 1px solid #000; /* 2px solid border */
+    padding: 10px; /* Add padding for spacing */
+    text-align: left; /* Align text to the left */
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+}
+
+/* Optional: Style for table headers */
+th {
+    background-color: #f2f2f2; /* Light grey background for headers */
+}
+tbody a{
+    text-decoration: none;
+    color: #f9004d;
+}
